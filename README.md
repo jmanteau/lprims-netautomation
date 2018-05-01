@@ -535,7 +535,7 @@ OpenConfig est supporté par des [constructeurs majeurs](http://www.openconfig.n
 
 Exemple de modèles de données fournis par OpenConfig :
 
-![](https://raw.githubusercontent.com/jmanteau/lprims-netautomation/master/openconfig-models.svg)
+![](https://raw.githubusercontent.com/jmanteau/lprims-netautomation/master/openconfig-models.svg?sanitize=true)
 
 
 
