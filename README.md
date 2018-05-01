@@ -2,9 +2,9 @@
 
 
 
-## Modèles de données
+Prérequis: connaissance de python et de concepts réseaux
 
-### Formats de données
+## Formats de données
 YAML, XML, JSON sont des noms de formats de données texte. Il y a plusieurs choses à comprendre ici:
 
 - Données
@@ -19,19 +19,19 @@ YAML, XML, JSON sont des noms de formats de données texte. Il y a plusieurs cho
 
   En opposition à “binaire” (ce qui est un abus de langage, puisque du texte en informatique, c’est du binaire). Cela signifie que votre format est organisé autour d’un texte lisible par les humains. 
 
-#### XML
+### XML
 
 **XML** est un langage de **balisage générique** qui permet de **structurer des données** afin qu'elles soient lisibles aussi bien par les humains que par des programmes de toutes sortes. 
 
-##### Structure d’un document XML ##
+**Structure d’un document XML**
 
-* __Prologue facultatif (mais recommandé) contenant des déclarations__
+* Prologue facultatif (mais recommandé) contenant des déclarations
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 ```
 
-* __Arbre d’éléments correspondant au contenu du document__
+* Arbre d’éléments correspondant au contenu du document
     * Chaque élément se compose d’une balise d’ouverture, d’un contenu et d’une
       balise de fermeture
     * Un contenu vide peut se noter `<nomBalise />`
@@ -43,12 +43,12 @@ YAML, XML, JSON sont des noms de formats de données texte. Il y a plusieurs cho
       autres éléments (une seule racine)
 
 
-* __Des commentaires et des instructions de traitement (facultatifs)__
+* Des commentaires et des instructions de traitement (facultatifs)
 
 ```xml
 <!-- mon commentaire-->
 ```
-#### JSON
+### JSON
 
 JSON (JavaScript Object Notation) utilise la notation des objets JavaScript pour transmettre de l’information structurée. Léger et au format texte, il est dérivé de l’écriture des langages standards de type [ECMAScript](http://www.ecma-international.org/publications/files/ecma-st/ECMA-262.pdf) (norme ISO/IEC 16262). Inscrit au Network Working Group de l’IETF sous la [RFC 4627](http://tools.ietf.org/html/rfc4627). Il est souvent utilisé pour simplifier et alléger les accès à des services web depuis les navigateurs.
 
@@ -56,8 +56,7 @@ Il permet de transmettre tout types de données (tableau, chaine, entier, objet 
 
 JSON est un format texte complètement indépendant de tout langage, mais les conventions qu'il utilise seront familières à tout programmeur habitué aux langages descendant du C, comme par exemple : C lui-même, C++, C#, Java, JavaScript, Perl, Python et bien d'autres. Ces propriétés font de JSON un langage d'échange de données idéal.
 
-
-##### Syntaxe
+**Syntaxe**
 
 JSON se base sur deux structures :
 
@@ -84,7 +83,7 @@ Une valeur peut être soit une chaîne de caractères entre guillemets, soit un 
 Une chaîne de caractères est une suite de zéro ou plus caractères Unicode, entre guillemets, et utilisant les échappements avec antislash. Un caractère est représenté par une chaîne d’un seul caractère. Une chaîne de caractères est très proche de son équivalent en Java.
 Un nombre est très proche de ceux qu’on peut rencontrer en Java, notez toutefois que les formats octal et hexadécimal ne sont pas utilisés.
 
-#### YAML
+### YAML
 
 Le nom YAML veut dire “YAML Ain’t Markup Language”, soit “YAML n’est pas un langage de balises”. Si cela met d’emblée des distances avec XML, cela ne nous dit pas ce qu’est YAML. YAML est, [d’après sa spécification](http://yaml.org/spec/1.2/spec.html), un langage de sérialisation de données conçu pour être lisible par des humains et travaillant bien avec les langage de programmation modernes pour les tâches de tous les jours.
 
@@ -221,10 +220,103 @@ set2:
 
 
 
-###Modèles de données et Transport
+### Exemple simple
+
+#### XML
+
+```Xml
+<breakfast_menu>
+	<food>
+		<name>Belgian Waffles</name>
+		<price>$5.95</price>
+		<description>
+Two of our famous Belgian Waffles with plenty of real maple syrup
+</description>
+		<calories>650</calories>
+	</food>
+	<food>
+		<name>French Toast</name>
+		<price>$4.50</price>
+		<description>
+Thick slices made from our homemade sourdough bread
+</description>
+		<calories>600</calories>
+	</food>
+	<food>
+		<name>Homestyle Breakfast</name>
+		<price>$6.95</price>
+		<description>
+Two eggs, bacon or sausage, toast, and our ever-popular hash browns
+</description>
+		<calories>950</calories>
+	</food>
+</breakfast_menu>
+```
+
+#### JSON
+
+```json
+{
+    "breakfast_menu": {
+        "food": [
+            {
+                "calories": "650",
+                "description": "Two of our famous Belgian Waffles with plenty of real maple syrup",
+                "name": "Belgian Waffles",
+                "price": "$5.95"
+            },
+            {
+                "calories": "600",
+                "description": "Thick slices made from our homemade sourdough bread",
+                "name": "French Toast",
+                "price": "$4.50"
+            },
+            {
+                "calories": "950",
+                "description": "Two eggs, bacon or sausage, toast, and our ever-popular hash browns",
+                "name": "Homestyle Breakfast",
+                "price": "$6.95"
+            }
+        ]
+    }
+}
+```
+
+
+
+#### YAML
+
+```yaml
+breakfast_menu:
+  food:
+  - calories: '650'
+    description: Two of our famous Belgian Waffles with plenty of real maple syrup
+    name: Belgian Waffles
+    price: $5.95
+  - calories: '600'
+    description: Thick slices made from our homemade sourdough bread
+    name: French Toast
+    price: $4.50
+  - calories: '950'
+    description: Two eggs, bacon or sausage, toast, and our ever-popular hash browns
+    name: Homestyle Breakfast
+    price: $6.95
+```
+
+
+
+#### Script de conversion
+
+Le script utilisé pour faire cette conversion est [ici](convertdataformat.py).
+
+## Modèles de données et Transport
 
 ​		
-**Un modèle de données définit explicitement et précisément la structure de données, sa syntax et sa sémantique.**
+**Un modèle de données définit explicitement et précisément la structure de données, sa syntaxe et sa sémantique.**
+
+#### Propriétaire / CLI sur SSH
+
+@TODO
 
 #### SNMP / SMI
 
@@ -238,6 +330,8 @@ D'après la RFC 1213 (MIB II) le cadre de travail de SNMP repose sur trois compo
 
 * SMI définit les types d'objets utilisés dans les mibs. C'est une sorte de méta modèle de données. Par exemple pour définir une adresse physique (MAC)
 
+  ​
+
 ```
     PhysAddress ::=
          OCTET STRING
@@ -247,9 +341,13 @@ D'après la RFC 1213 (MIB II) le cadre de travail de SNMP repose sur trois compo
     -- a string of 6 octets.
 ```
 
+
+
 * La MIB décrit une collection structurée des ressources à gérer. Une ressource à gérer est représentée par un objet.
 
-* ```
+  ​
+
+```sn
 -- the TCP Connection table
 
             -- The TCP connection table contains information about this
@@ -293,11 +391,13 @@ D'après la RFC 1213 (MIB II) le cadre de travail de SNMP repose sur trois compo
                     tcpConnRemPort
                         INTEGER (0..65535)
                 }
-  ```
+```
 
 
 
 * Le protocole SNMP qui régit le contenu des dialogues clients/serveurs c'est à dire l'interrogation des données structurées par la MIB.	
+
+  ​
 
 #### NETCONF / YANG
 
@@ -407,9 +507,19 @@ On a ajouté un intervalle de validité au type prédéfini `uint8`. Autre exemp
      }
 ```
 
-#### Openconfig
 
-Ce qui réunit l”[IETF](https://www.ietf.org/archive/id/draft-openconfig-netmod-model-catalog-01.txt) et [Openconfig](http://www.openconfig.net/) est de résoudre ce deux défis :
+
+#### [RESTCONF](http://www.bortzmeyer.org/8040.html)
+
+Pour configurer à distance un équipement réseau (par exemple un **routeur** ou bien un **commutateur**), il existait déjà le protocole **NETCONF** ([RFC 6241](http://www.bortzmeyer.org/6241.html)). Fondé sur un échange de données en **XML**, il n'a pas convaincu tout le monde, qui aurait préféré un protocole **REST**. C'est désormais fait avec RESTCONF, décrit dans ce RFC.
+
+RESTCONF est donc bâti sur **HTTP** ([RFC 7230](http://www.bortzmeyer.org/7230.html)) et les opérations **CRUD**. Comme NETCONF, RESTCONF utilise des modèles de données décrits en **YANG** ([RFC 7950](http://www.bortzmeyer.org/7950.html)). Il devrait donc permettre de configurer plus simplement les équipements réseau. (Les historiens noteront que l'ancêtre **SNMP** avait été prévu, non seulement pour **lire** des informations, mais également pour **écrire**, par exemple pour modifier la configuration d'un routeur. Cette possibilité n'a eu aucun succès. Cet échec est une des raisons pour lesquelles NETCONF a été développé.)
+
+Les opérations **CRUD** sont donc faites avec les méthodes classiques de **HTTP** ([RFC 7231](http://www.bortzmeyer.org/7231.html)). Lire l'état de l'engin se fait évidemment avec la méthode `GET`. Le modifier se fait avec une des méthodes parmi `PUT`, `DELETE`, `POST` ou `PATCH` (cf. section 4 du RFC). Les données envoyées, ou bien lues, sont encodées, au choix, en **XML** ou en **JSON**. À noter que RESTCONF, conçu pour les cas relativement simples, est plus limité que NETCONF (il n'a pas de fonction de **verrou**, par exemple). Il ne peut donc pas complètement remplacer NETCONF (ainsi, si un client NETCONF a mis un verrou sur une ressource, le client RESTCONF ne peut pas y accéder, voir la section 1.4 du RFC). Mais le RFC fait quand même plus de 130 pages, avec plein d'options.
+
+## OpenConfig
+
+L'[IETF](https://www.ietf.org/archive/id/draft-openconfig-netmod-model-catalog-01.txt) et [Openconfig](http://www.openconfig.net/) veulent résoudre ces deux défis :
 
 - des constructeurs **différents** ont des commandes / syntaxes CLI **différentes**
 
@@ -419,23 +529,102 @@ Ce qui réunit l”[IETF](https://www.ietf.org/archive/id/draft-openconfig-netmo
 
 **OpenConfig vise à modéliser (en YANG) des fonctions réseau (configuration et télémétrie), de façon neutre et indépendante des constructeurs/éditeurs.** 
 
+
+
 OpenConfig est supporté par des [constructeurs majeurs](http://www.openconfig.net/about/participants/) ([Arista](https://eos.arista.com/openconfig-the-emerging-industry-standard-api-for-network-elements/), [Cisco ](https://newsroom.cisco.com/press-release-content?articleId=1727796), [Juniper](http://forums.juniper.net/t5/Automation-Programmability/Network-Programmability-with-OpenConfig-and-Junos/ba-p/289136)), des grandes entreprises (Google, Microsoft, Facebook, etc) ou des grands opérateurs télécoms (AT&T, British Telecom, Level 3, etc).
 
 Exemple de modèles de données fournis par OpenConfig :
 
+![](/Users/jmanteau/PycharmProjects/lprims-netautomation/openconfig-models.svg)
+
+**OpenConfig Exemple**
+
+extrait de modèle YANG OpenConfig pour BGP
+
+```
+  typedef peer-type {
+    type enumeration {
+      enum INTERNAL {
+        description "internal (iBGP) peer";
+      }
+      enum EXTERNAL {
+        description "external (eBGP) peer";
+      }
+    }
+    description
+      "labels a peer or peer group as explicitly internal or
+      external";
+  }
+```
+
+Remplissage du modèle:
+
+```
+>>> from oc_bgp import bgp 
+
+>>> oc = bgp()
+
+>>> oc.bgp.global_.config.as_ = 2856
+
+>>> oc.bgp.global_.config.router_id = "10.152.0.4"
+
+>>> oc.bgp.neighbors.neighbor.add("192.168.1.2")
+
+>>> oc.bgp.neighbors.neighbor["192.168.1.2"].config.peer_as = 5400
+
+>>> oc.bgp.neighbors.neighbor["192.168.1.2"].config.description = "a fictional transit session" 
+```
+
+Résultat en JSON:
+
+```json
+{
+    "bgp": {
+        "neighbors": {
+            "neighbor": {
+                "192.168.1.2": {
+                    "neighbor-address": "192.168.1.2", 
+                    "config": {
+                        "peer-type": "EXTERNAL", 
+                        "peer-as": 5400, 
+                        "description": "a fictional transit session"
+                    }
+                }
+            }
+        }, 
+        "global": {
+            "config": {
+                "as": 2856, 
+                "router-id": "10.152.0.4"
+            }
+        }
+    }
+}
+```
 
 
-![](/Users/jmanteau/PycharmProjects/lprims-network_automation/openconfig-models.svg)
 
-### Transport Protocols
+## Vision simplifiée du modèle d'administration réseau 
 
-Schema with control 
-SSH RESTCONF NETCONF REST
-Openflow
+![](/Users/jmanteau/PycharmProjects/lprims-netautomation/networkadminstack.png)
 
-Templating (Jinja)
 
-## Extracting Information
+
+## Outils d'automatisation des réseaux
+
+### Versionning (Git)
+
+Git est en dehors du scope de ce cours. Il est cependant nécessaire de maitriser Git aujourd'hui en tant qu'ingénieur réseau. Que cela soit pour sauvegarder les configurations, partager du code ou des templates de configuration sur un repository central.
+
+Les deux liens suivants sont une bonne introduction à cet outil:
+
+https://try.github.io/
+
+https://www.atlassian.com/git
+
+### Templating (Jinja)
+
+### Extracting Information
 
 Regex
 
@@ -443,15 +632,15 @@ TextFSM
 
 Fact Gathering
 
-
-
-## Tooling
-
-### Git
+NTC Napalm
 
 ### Ansible
 
 ### Napalm
+
+
+
+
 
 # TP
 
