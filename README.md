@@ -656,7 +656,7 @@ NTC Napalm
 
 ## Consignes
 
-![](/Users/jmanteau/PycharmProjects/lprims-network_automation/TP IUT Network Automation.png)
+![](https://github.com/jmanteau/lprims-netautomation/raw/master/TP%20IUT%20Network%20Automation.png)
 
 ### Facts
 
