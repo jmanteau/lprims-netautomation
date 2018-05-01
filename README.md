@@ -2,7 +2,29 @@
 
 
 
-Prérequis: connaissance de python et de concepts réseaux
+**Syllabus**
+
+*But*: Donner à l'étudiant un aperçu des technologies utilisées dans le monde des réseaux pour l'automatisation de ceux-ci.
+
+*Niveau*: IUT
+
+*Prérequis*: connaissance de python et des concepts réseaux
+
+Le contenu est structuré de la façon suivante:
+
+* Introduction aux formats de données (comment je stocke la donnée)
+
+* Introduction aux modèles de données et leur transport dans le monde du réseau (comment je structure la donnée et comment je l'achemine)
+
+* Exemple concret des deux points précédents avec OpenConfig
+
+* Présentation d'outils utiles pour l'automatisation du réseau
+
+* TP afin d'utiliser certain des outils présentés
+
+* Les références permettent à l'étudiant intéressé par ce domaine de poursuivre par lui-même.
+
+  ​
 
 ## Formats de données
 YAML, XML, JSON sont des noms de formats de données texte. Il y a plusieurs choses à comprendre ici:
