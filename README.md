@@ -535,7 +535,9 @@ OpenConfig est supporté par des [constructeurs majeurs](http://www.openconfig.n
 
 Exemple de modèles de données fournis par OpenConfig :
 
-![](/Users/jmanteau/PycharmProjects/lprims-netautomation/openconfig-models.svg)
+![](https://raw.githubusercontent.com/jmanteau/lprims-netautomation/master/openconfig-models.svg)
+
+
 
 **OpenConfig Exemple**
 
@@ -606,7 +608,7 @@ Résultat en JSON:
 
 ## Vision simplifiée du modèle d'administration réseau 
 
-![](/Users/jmanteau/PycharmProjects/lprims-netautomation/networkadminstack.png)
+![](https://github.com/jmanteau/lprims-netautomation/raw/master/networkadminstack.png)
 
 
 
