@@ -1,0 +1,5 @@
+---
+
+- name: Configure hostname 
+  ios_system:
+    hostname: {{ hostname }}
