@@ -1,0 +1,21 @@
+---
+hostname: rt-cisco-2
+
+bgp:
+  bgp_as: 65002
+  neighbors:
+    - peer_as: 65001
+      peer_ip: 10.0.0.1
+
+interfaces:
+  "Ethernet0/1":
+    ip: 10.0.0.2/29
+    description: "Interco"
+  "Loopback1":
+    ip: 100.64.1.2/32
+    description: "BGP Loopback"
+  "Loopback2":
+    ip: 2.2.2.2/32
+    description: "BGP Loopback"
+
+

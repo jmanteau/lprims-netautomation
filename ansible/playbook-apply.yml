@@ -1,5 +1,0 @@
----
-- hosts: routers
-  roles:
-   - role: 'base'
-

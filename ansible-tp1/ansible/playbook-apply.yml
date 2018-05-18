@@ -1,0 +1,7 @@
+---
+- hosts: routers
+  roles:
+   - role: 'base'
+#   - role: 'interfaces'
+#   - role: 'bgp'
+

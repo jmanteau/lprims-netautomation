@@ -1,0 +1,5 @@
+- name: Set Interfaces IPv4 address
+  ios_l3_interface:
+    name: "{{ item }}"
+    ipv4: "{{ interfaces[item].ip }}"
+  with_items: ["Ethernet0/1"]

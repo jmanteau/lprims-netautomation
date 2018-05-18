@@ -2,6 +2,10 @@
 
 
 
+### [Lien vers le TP](TP.md)
+
+
+
 **Syllabus**
 
 *But*: Donner à l'étudiant un aperçu des technologies utilisées dans le monde des réseaux pour l'automatisation de ceux-ci.
@@ -338,7 +342,13 @@ Le script utilisé pour faire cette conversion est [ici](convertdataformat.py).
 
 #### Propriétaire / CLI sur SSH
 
-@TODO
+L'accès par SSH à une ligne de commande propriétaire est le modèle le plus courant rencontré. La configuration de l'OS Réseau se fait par une syntaxe propriétaire spécifique à chaque constructeur. 
+
+Une interconnexion BGP bien qu'opérationnelle entre deux routeurs de marque différentes se configurera de manière différente sur chacun d'eux. Ainsi le même data model (configuration logique) peut être instancié de façon différentes (les commandes résultantes) sur deux équipements réseaux.
+
+La CLI propriétaire s'axe principalement sur la configuration de l'équipement réseau même si certaines commandes de monitoring ne seront disponible que via CLI (et non par SNMP par exemple).
+
+Toute programmation d'équipements réseaux par ce biais passe par l'envoi de commandes spécifiques et  l'analyse ("parsing") de la configuration réseau de l'équipement et du retour aux commandes de configuration.
 
 #### SNMP / SMI
 
@@ -663,52 +673,6 @@ NTC Napalm
 ### Napalm
 
 
-
-
-
-# TP
-
-## Setup
-
-[GNS3 VM](https://docs.gns3.com/1wdfvS-OlFfOf7HWZoSXMbG58C4pMSy7vKJFiKKVResc/index.html)
-
-[GNS3 Client](https://docs.gns3.com/)
-
-[Ansible](http://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installation-guide)
-
-## Consignes
-
-![](https://github.com/jmanteau/lprims-netautomation/raw/master/TP%20IUT%20Network%20Automation.png)
-
-### Facts
-
-[Vyos Facts](http://docs.ansible.com/ansible/latest/modules/vyos_facts_module.html#vyos-facts-module)
-
-[IOS facts](http://docs.ansible.com/ansible/latest/modules/ios_facts_module.html#ios-facts-module)
-
-### System
-
-[Vyos System](http://docs.ansible.com/ansible/latest/modules/vyos_system_module.html#vyos-system-module)
-
-[IOS System](http://docs.ansible.com/ansible/latest/modules/ios_system_module.html#ios-system-module)
-
-###Interfaces
-
-[Vyos Interface L3](http://docs.ansible.com/ansible/latest/modules/vyos_l3_interface_module.html#vyos-l3-interface-module)
-
-[IOS Interface L3](http://docs.ansible.com/ansible/latest/modules/ios_l3_interface_module.html#ios-l3-interface-module)
-
-### BGP
-
-[IOS Config](http://docs.ansible.com/ansible/latest/modules/ios_config_module.html)
-
-[Vyos Config](http://docs.ansible.com/ansible/latest/modules/vyos_config_module.html#vyos-config-module)
-
-
-
-## Résultat attendu
-
-Playbook qui sera joué from scratch
 
 # References
 

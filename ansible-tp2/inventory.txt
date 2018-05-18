@@ -1,0 +1,10 @@
+[cisco]
+
+[vyos]
+vyos-rt-1 ansible_host=192.168.69.134
+vyos-rt-2 ansible_host=192.168.69.135
+
+[routers:children]
+cisco
+vyos
+

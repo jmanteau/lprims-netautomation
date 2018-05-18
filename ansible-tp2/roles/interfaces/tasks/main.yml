@@ -1,0 +1,30 @@
+---
+
+
+- name: "[VYOS] Set Interfaces IPv4 address and Up"
+  vyos_l3_interface:
+    name: "{{ item }}"
+    ipv4: "{{ interfaces[item].ip }}"
+  with_items: "{{ interfaces.keys() }}"
+  when: inventory_hostname in groups['vyos']
+
+- name: "[VYOS] Set Loopback IPv4 address and Up"
+  vyos_config:
+    lines: 
+      - set interface dummy {{ item }} address {{ loopback[item].ip }}
+  with_items: "{{ loopback.keys() }}"
+  when: inventory_hostname in groups['vyos']
+
+- name: "[VYOS] Set Interfaces Description"
+  vyos_config:
+    lines: 
+      - set interface ethernet {{ item }} description {{ interfaces[item].description }}
+  with_items: "{{ interfaces.keys() }}"
+  when: inventory_hostname in groups['vyos']
+
+- name: "[VYOS] Set Loopback Description"
+  vyos_config:
+    lines: 
+      - set interface dummy {{ item }} description {{ loopback[item].description }}
+  with_items: "{{ loopback.keys() }}"
+  when: inventory_hostname in groups['vyos']

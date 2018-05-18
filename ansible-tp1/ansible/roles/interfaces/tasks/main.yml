@@ -1,0 +1,24 @@
+---
+- name: "[IOS] Set Interfaces up"
+  ios_interface:
+    name: "{{ item }}"
+    enabled: true
+  with_items: "{{ interfaces.keys() }}"
+  when: inventory_hostname in groups['cisco']
+
+
+- name: "[IOS] Set Interfaces IPv4 address"
+  ios_l3_interface:
+    name: "{{ item }}"
+    ipv4: "{{ interfaces[item].ip }}"
+  with_items: "{{ interfaces.keys() }}"
+  when: inventory_hostname in groups['cisco']
+
+- name: "[IOS] Set Interfaces Description"
+  ios_config:
+    parents: "interface {{ item }}"
+    lines:
+      - description {{ interfaces[item].description }}
+  with_items: "{{ interfaces.keys() }}"
+  when: inventory_hostname in groups['cisco']
+

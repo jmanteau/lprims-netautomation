@@ -1,0 +1,7 @@
+---
+
+
+- name: Configure hostname VYOS
+  vyos_system:
+    host_name: "{{ hostname }}"
+  when: inventory_hostname in groups['vyos']

@@ -1,0 +1,7 @@
+---
+- hosts: vyos
+  roles:
+   - role: 'base'
+   - role: 'interfaces'
+   - role: 'bgp'
+

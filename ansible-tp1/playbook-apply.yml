@@ -1,0 +1,7 @@
+---
+- hosts: cisco
+  roles:
+   - role: 'base'
+   - role: 'interfaces'
+   - role: 'bgp'
+

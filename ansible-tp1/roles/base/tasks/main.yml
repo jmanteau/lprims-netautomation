@@ -1,0 +1,11 @@
+---
+
+- name: Configure hostname IOS 
+  ios_system:
+    hostname: "{{ hostname }}"
+  when: inventory_hostname in groups['cisco']
+
+- name: Configure hostname VYOS
+  vyos_system:
+    host_name: "{{ hostname }}"
+  when: inventory_hostname in groups['vyos']

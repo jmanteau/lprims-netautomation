@@ -1,0 +1,9 @@
+---
+# Never store credentials in clear in production. Use a vault.
+
+ansible_network_os: vyos
+ansible_user: vyos
+ansible_password: vyos
+#ansible_become: yes
+
+
