@@ -2,7 +2,7 @@
 
 
 
-### [Lien vers le TP](TP.md)
+### [Lien vers le TP](https://github.com/jmanteau/lprims-netautomation/blob/master/TP.md)
 
 
 
