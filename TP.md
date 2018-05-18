@@ -1,11 +1,10 @@
 
 
-# TP Intro to Network Automation
+# Intro to Network Automation with Ansible Exercices
 
 ## Instructions
 
-![](https://github.com/jmanteau/lprims-netautomation/raw/master/TP%20IUT%20Network%20Automation.png)
-
+![Instructions](https://github.com/jmanteau/lprims-netautomation/raw/master/TP%20IUT%20Network%20Automation.png)
 
 
 #### Goals:
@@ -72,13 +71,13 @@ General documentation: [GNS3 Client](https://docs.gns3.com/)
 | User                       | cisco            | vyos                            |
 | Password / Enable Password | cisco123 / cisco | vyos                            |
 
-###Boostrap Conf
+### Boostrap Conf
 
 If needed, use the following commands for each OS in the console to bootstrap them to be reacheable by SSH over the local network from your workstation.
 
 The bootstrap for IOS is normally not needed as the configuration are embedded in the project.
 
-####Vyos
+#### Vyos
 
 ```
 configure
@@ -92,7 +91,7 @@ show interfaces
 
 ```
 
-####IOS
+#### IOS
 
 ```
 conf t
@@ -122,7 +121,7 @@ Download the projects at the following URL:
 - xxx
 - xxx
 
-###Running and connecting to the routers
+### Running and connecting to the routers
 
 Open the project lprims-netautomation-images.gns3project, it will import the images for the VYOS and IOS routers used by the others projects.
 
@@ -186,7 +185,7 @@ When the TP requires it, for each topology lprims-netautomation-tpX.gns3project:
 
 [Looping In Ansible](https://codereviewvideos.com/course/ansible-tutorial/video/looping-in-ansible-with-items)
 
-###Global Informations
+### Global Informations
 
 [Vyos User Guide](https://wiki.vyos.net/wiki/User_Guide)
 
