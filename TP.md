@@ -15,13 +15,20 @@
 
 
 
+
 To gain full understanding of Ansible, I recommend doing [Training Course for Ansible Network Automation](https://github.com/network-automation/linklight)
 
-(git clone and open the html in deck folder)
+(git clone and open the html in deck folder).
 
 To have a quick overview read [this article](https://leucos.github.io/ansible-files-layout).
 
-For this TP, the simple structure along with the documentations linked below is enough to start.
+
+
+For these exercices, the simple structure already given along with the documentations linked below is enough to start.
+
+
+
+*Go to the Setup section first to prepare the tooling before starting the exercices*
 
 
 
@@ -149,7 +156,7 @@ Open the project lprims-netautomation-images.gns3project, it will import the ima
 When the TP requires it, for each topology lprims-netautomation-tpX.gns3project:
 
 * open it 
-* Add a management cloud by drag and dropping on the topology
+* Add a management cloud by drag and dropping on the topology ( GNS3 does not support cloud object in the portable projects)
 
 ![](/Users/jmanteau/PycharmProjects/lprims-netautomation/gns3_cloudmgt.png)
 
