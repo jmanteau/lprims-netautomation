@@ -53,15 +53,42 @@ The goal of this part is to fullfill the roles and data model to configure the t
 
 ## Setup
 
+
+
+#### GNS3
+
 Direct Download for VM/Client: [Github Release page](https://github.com/GNS3/gns3-gui/releases) Download the client corresponding to your OS and the recommanded VM (VMWare). Use VirtualBox if you must.
 
 Documentation for VM/Client installation: [GNS3 VM](https://docs.gns3.com/1wdfvS-OlFfOf7HWZoSXMbG58C4pMSy7vKJFiKKVResc/index.html)
 
 General documentation: [GNS3 Client](https://docs.gns3.com/)
 
-[Ansible](http://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installation-guide) Due to a bug in one vyos module on the last Vyos 1.2, use Ansible devel (```pip install git+https://github.com/ansible/ansible.git@devel```)
 
 
+#### Ansible
+
+Linux/Mac: [Ansible](http://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installation-guide) Due to a bug in one vyos module on the last Vyos 1.2, use Ansible devel (```pip install git+https://github.com/ansible/ansible.git@devel```)
+
+Windows: Launch a Linux VM, install Ansible with the previous links.  Share with the VM the folder of the exercices.
+
+
+
+#### GNS3 Portable projects
+
+Download the projects at the following URLs:
+
+- [Images](https://s3-eu-west-1.amazonaws.com/jmanteau/lprims-netautomation-images.gns3project)
+- [TP1](https://s3-eu-west-1.amazonaws.com/jmanteau/lprims-netautomation-tp1.gns3project)
+- [TP2](https://s3-eu-west-1.amazonaws.com/jmanteau/lprims-netautomation-tp2.gns3project)
+- [TP3](https://s3-eu-west-1.amazonaws.com/jmanteau/lprims-netautomation-tp3.gns3project)
+
+
+
+#### Ansible TP files
+
+Either clone the repo (```git clone https://github.com/jmanteau/lprims-netautomation.git```) or [download    an zip of it](https://github.com/jmanteau/lprims-netautomation/archive/master.zip)
+
+Then go to ansible-tpX folder corresponding to the current TP you are doing. 
 
 ### Information
 
@@ -113,13 +140,7 @@ wr
 
 ```
 
-### Import GNS3 Portable projects
 
-Download the projects at the following URL:
-
-- xxx
-- xxx
-- xxx
 
 ### Running and connecting to the routers
 
