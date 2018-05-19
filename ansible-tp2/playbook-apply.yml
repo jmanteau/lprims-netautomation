@@ -1,5 +1,5 @@
 ---
-- hosts: vyos
+- hosts: routers
   roles:
    - role: 'base'
    - role: 'interfaces'

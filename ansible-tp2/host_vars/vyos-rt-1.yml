@@ -2,12 +2,10 @@
 hostname: rt-vyos-1
 
 bgp:
-  bgp_as: 65003
+  bgp_as: 
   neighbors:
     - peer_as: 65002
       peer_ip: 10.0.0.2
-    - peer_as: 65001
-      peer_ip: 10.0.0.3
 
 interfaces:
   "eth1":
