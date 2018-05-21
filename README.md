@@ -39,15 +39,15 @@ YAML, XML, JSON sont des noms de formats de données texte. Il y a plusieurs cho
 
 - Format :
 
-  Comment sont organiser ces données. Comme on manipule les données avec un ordinateur, il est nécessaire de les ranger d’une certaine façon. En les rangeant de cette façon, l’ordinateur, si il connait le “format”, est capable d’analyser les données qu’il reçoit. 
+  Comment sont organisées ces données. Comme on manipule les données avec un ordinateur, il est nécessaire de les ranger d’une certaine façon. En les rangeant de cette façon, l’ordinateur, si il connait le “format”, est capable d’analyser les données qu’il reçoit.
 
 - Texte :
 
-  En opposition à “binaire” (ce qui est un abus de langage, puisque du texte en informatique, c’est du binaire). Cela signifie que votre format est organisé autour d’un texte lisible par les humains. 
+  En opposition à “binaire” (ce qui est un abus de langage, puisque du texte en informatique, c’est du binaire). Cela signifie que votre format est organisé autour d’un texte lisible par les humains.
 
 ### XML
 
-**XML** est un langage de **balisage générique** qui permet de **structurer des données** afin qu'elles soient lisibles aussi bien par les humains que par des programmes de toutes sortes. 
+**XML** est un langage de **balisage générique** qui permet de **structurer des données** afin qu'elles soient lisibles aussi bien par les humains que par des programmes de toutes sortes.
 
 **Structure d’un document XML**
 
@@ -141,13 +141,13 @@ toutefois: "Une chaîne, peut être contenue entre guillemets."
 # Les chaînes couvrant plusieurs lignes, peuvent être écrites au choix,
 # comme un "bloc littéral" (avec '|') ou bien un "bloc replié" (avec '>').
 bloc_littéral: |
-    Tout ce bloc de texte sera la valeur de la clé "bloc_littéral", 
+    Tout ce bloc de texte sera la valeur de la clé "bloc_littéral",
     avec préservation des retours à la ligne.
     Le littéral continue jusqu'à ce que l'indentation soit annulée.
         Toutes lignes qui seraient "davantage indentées" conservent leur
         indentation, constituée de 4 espaces.
 bloc_replié: >
-    Tout ce bloc de texte sera la valeur de la clé "bloc_replié", mais 
+    Tout ce bloc de texte sera la valeur de la clé "bloc_replié", mais
     cette fois-ci, toutes les nouvelles lignes deviendront un simple espace.
     Les lignes vides, comme ci-dessus, seront converties en caractère de
     nouvelle ligne.
@@ -175,7 +175,7 @@ une_map_imbriquée:
 : et ceci est sa valeur
 
 # YAML autorise aussi l'usage des collections à l'intérieur des clés,
-# mais certains langages de programmation ne le tolère pas si bien.
+# mais certains langages de programmation ne le tolèrent pas si bien.
 
 # Les séquences (équivalent des listes ou tableaux) ressemblent à cela :
 une_séquence:
@@ -342,11 +342,11 @@ Le script utilisé pour faire cette conversion est [ici](convertdataformat.py).
 
 #### Propriétaire / CLI sur SSH
 
-L'accès par SSH à une ligne de commande propriétaire est le modèle le plus courant rencontré. La configuration de l'OS Réseau se fait par une syntaxe propriétaire spécifique à chaque constructeur. 
+L'accès par SSH à une ligne de commande propriétaire est le modèle le plus courant rencontré. La configuration de l'OS Réseau se fait par une syntaxe propriétaire spécifique à chaque constructeur.
 
 Une interconnexion BGP bien qu'opérationnelle entre deux routeurs de marque différentes se configurera de manière différente sur chacun d'eux. Ainsi le même data model (configuration logique) peut être instancié de façon différentes (les commandes résultantes) sur deux équipements réseaux.
 
-La CLI propriétaire s'axe principalement sur la configuration de l'équipement réseau même si certaines commandes de monitoring ne seront disponible que via CLI (et non par SNMP par exemple).
+La CLI propriétaire s'axe principalement sur la configuration de l'équipement réseau même si certaines commandes de monitoring ne seront disponibles que via CLI (et non par SNMP par exemple).
 
 Toute programmation d'équipements réseaux par ce biais passe par l'envoi de commandes spécifiques et  l'analyse ("parsing") de la configuration réseau de l'équipement et du retour aux commandes de configuration.
 
@@ -427,7 +427,7 @@ D'après la RFC 1213 (MIB II) le cadre de travail de SNMP repose sur trois compo
 
 
 
-* Le protocole SNMP qui régit le contenu des dialogues clients/serveurs c'est à dire l'interrogation des données structurées par la MIB.	
+* Le protocole SNMP qui régit le contenu des dialogues clients/serveurs c'est à dire l'interrogation des données structurées par la MIB.
 
   ​
 
@@ -438,17 +438,17 @@ D'après la RFC 1213 (MIB II) le cadre de travail de SNMP repose sur trois compo
    NETCONF est un protocole de gestion de la configuration des dispositifs de données en réseau. Il est conçu pour couvrir les insuffisances de « Simple Network Management Protocol » (SNMP) et Command-Line Interface (CLI), dans les fonctions de configurations réseaux. Le protocole prévoit des mécanismes d’installation, manipulation, et suppression de la configuration des périphériques réseaux. Il utilise un langage de balisage extensible (XML) codant les données de configuration ainsi que les messages du protocole.
      Le protocole NETCONF utilise un appel de procédure distante (RPC). Un client encode un RPC en XML et l'envoie à un serveur utilisant une méthode de connexion sécurisée. Le serveur répond avec une réponse codée au format XML.
 
-**De SNMP**, il retient, entre autres, le modèle de données arborescent et hiérarchique qui permet de classifier les données de gestion de réseaux par catégories et sous-catégories : interfaces réseaux, routage, système, etc. 
+**De SNMP**, il retient, entre autres, le modèle de données arborescent et hiérarchique qui permet de classifier les données de gestion de réseaux par catégories et sous-catégories : interfaces réseaux, routage, système, etc.
 
-**De CLI**, il retient l’approche externalisée du modèle de sécurité (SSH) et le côté plus orienté configuration que monitoring. NETCONF dispose à la fois d’une configuration running, c’est-à-dire en cours de production, d’une configuration startup lancée au démarrage de la machine, et d’une nouveauté, une configuration candidate qui permet de travailler sur une configuration off-line et de la valider avant de la mettre en production. 
+**De CLI**, il retient l’approche externalisée du modèle de sécurité (SSH) et le côté plus orienté configuration que monitoring. NETCONF dispose à la fois d’une configuration running, c’est-à-dire en cours de production, d’une configuration startup lancée au démarrage de la machine, et d’une nouveauté, une configuration candidate qui permet de travailler sur une configuration off-line et de la valider avant de la mettre en production.
 
-Le côté transactionnel de Netconf, avec cette configuration candidate, les mécanismes de validation avant la mise en production et les verrous qui garantissent un accès en isolation accroissent la sureté de configuration. Netconf a l’avantage de pouvoir valider une configuration par rapport à sa syntaxe et sa structure. En effet, si le modèle de données est décrit avec des schémas XML ou des DTD, il est possible lors d’une opération copy-config de vérifier que sa structure est correcte. Cette vérification est également valable pour les messages reçus, ce qui permet de traiter plus facilement les cas d’erreurs et évite de commencer à traiter le message s’il n’est pas valide par rapport au schéma XML de Netconf. 
+Le côté transactionnel de Netconf, avec cette configuration candidate, les mécanismes de validation avant la mise en production et les verrous qui garantissent un accès en isolation accroissent la sureté de configuration. Netconf a l’avantage de pouvoir valider une configuration par rapport à sa syntaxe et sa structure. En effet, si le modèle de données est décrit avec des schémas XML ou des DTD, il est possible lors d’une opération copy-config de vérifier que sa structure est correcte. Cette vérification est également valable pour les messages reçus, ce qui permet de traiter plus facilement les cas d’erreurs et évite de commencer à traiter le message s’il n’est pas valide par rapport au schéma XML de Netconf.
 
 ##### YANG
 
-Netconf est un standard IETF (RFC 6241) visant à standardiser les directives réseau auprès des équipements. YANG est un langage permettant la modélisation des services réseau. 
+Netconf est un standard IETF (RFC 6241) visant à standardiser les directives réseau auprès des équipements. YANG est un langage permettant la modélisation des services réseau.
 
-Une directive Netconf pourra contenir un modèle YANG et ainsi configurer de la même manière des équipements de constructeurs différents, si tant est qu’ils implémentent bien le service demandé et cette API de configuration. 
+Une directive Netconf pourra contenir un modèle YANG et ainsi configurer de la même manière des équipements de constructeurs différents, si tant est qu’ils implémentent bien le service demandé et cette API de configuration.
 
 
 Yang a donc bien des points communs avec le **SMI** des [RFC 2578](http://www.bortzmeyer.org/2578.html) et [RFC 2579](https://www.rfc-editor.org/rfc/rfc2579.txt). Avant **Netconf**, beaucoup de gens pensaient que toute la gestion des équipements réseau se ferait en **SNMP**, en s'appuyant sur ce modèle SMI. Si, pour la lecture des variables, SNMP s'est largement imposé, force est de constater que, pour l'écriture de variables et pour les actions, SNMP reste très peu utilisé, au profit de toute une galaxie de mécanismes privés (Web, **REST**, **SSH** + **CLI**, etc), galaxie que Netconf vise à remplacer. Une **MIB** du SMI peut donc être traduite en Yang, l'inverse n'étant pas vrai (Yang étant plus riche).
@@ -458,7 +458,7 @@ La **syntaxe** de Yang utilise des groupes emboîtés, délimités par des **acc
 Donc, un engin donné, **routeur** ou autre équipement qu'on veut gérer, est décrit par des modules Yang. Lorsqu'un serveur Netconf à bord dudit engin met en œuvre un module Yang, cela veut dire qu'il permet de modifier, via Netconf, les variables décrites dans le module (le serveur typique met en œuvre plusieurs modules). Voici le début d'un module possible :
 
 ```
-     // Only an example, not a real module. 
+     // Only an example, not a real module.
      module acme-system {
          namespace "http://acme.example.com/system";
          prefix "acme";
@@ -559,7 +559,7 @@ L'[IETF](https://www.ietf.org/archive/id/draft-openconfig-netmod-model-catalog-0
 
   ​
 
-**OpenConfig vise à modéliser (en YANG) des fonctions réseau (configuration et télémétrie), de façon neutre et indépendante des constructeurs/éditeurs.** 
+**OpenConfig vise à modéliser (en YANG) des fonctions réseau (configuration et télémétrie), de façon neutre et indépendante des constructeurs/éditeurs.**
 
 
 
@@ -594,7 +594,7 @@ extrait de modèle YANG OpenConfig pour BGP
 Remplissage du modèle:
 
 ```
->>> from oc_bgp import bgp 
+>>> from oc_bgp import bgp
 
 >>> oc = bgp()
 
@@ -606,7 +606,7 @@ Remplissage du modèle:
 
 >>> oc.bgp.neighbors.neighbor["192.168.1.2"].config.peer_as = 5400
 
->>> oc.bgp.neighbors.neighbor["192.168.1.2"].config.description = "a fictional transit session" 
+>>> oc.bgp.neighbors.neighbor["192.168.1.2"].config.description = "a fictional transit session"
 ```
 
 Résultat en JSON:
@@ -617,18 +617,18 @@ Résultat en JSON:
         "neighbors": {
             "neighbor": {
                 "192.168.1.2": {
-                    "neighbor-address": "192.168.1.2", 
+                    "neighbor-address": "192.168.1.2",
                     "config": {
-                        "peer-type": "EXTERNAL", 
-                        "peer-as": 5400, 
+                        "peer-type": "EXTERNAL",
+                        "peer-as": 5400,
                         "description": "a fictional transit session"
                     }
                 }
             }
-        }, 
+        },
         "global": {
             "config": {
-                "as": 2856, 
+                "as": 2856,
                 "router-id": "10.152.0.4"
             }
         }
@@ -638,7 +638,7 @@ Résultat en JSON:
 
 
 
-## Vision simplifiée du modèle d'administration réseau 
+## Vision simplifiée du modèle d'administration réseau
 
 ![](https://github.com/jmanteau/lprims-netautomation/raw/master/networkadminstack.png)
 
@@ -688,7 +688,7 @@ https://github.com/ipspace/ansible-examples
 
 [DevNet Workshop- Hands On Exploration of NETCONF and YANG](https://clnv.s3.amazonaws.com/2018/eur/pdf/DEVNET-2561.pdf)
 
-[SDx Open Source in Networking Report](https://www.sdxcentral.com/reports/2017/open-source-networking/) 
+[SDx Open Source in Networking Report](https://www.sdxcentral.com/reports/2017/open-source-networking/)
 
 [Training Course for Ansible Network Automation](https://github.com/network-automation/linklight)
 
