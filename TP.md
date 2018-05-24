@@ -70,7 +70,7 @@ Documentation for VM/Client installation: [GNS3 VM](https://docs.gns3.com/1wdfvS
 
 General documentation: [GNS3 Client](https://docs.gns3.com/)
 
-
+@TODO Document VMware import and bridge client (screenshots)
 
 #### Ansible
 

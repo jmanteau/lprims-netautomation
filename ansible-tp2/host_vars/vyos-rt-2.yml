@@ -5,15 +5,12 @@ bgp:
   bgp_as: 65002
   neighbors:
     - peer_as: 65001
-      peer_ip: 10.0.0.3
+      peer_ip: 10.0.0.1
 
 interfaces:
   "eth1":
     ip: 10.0.0.2/29
-    description: "IntercoLeft"
-  "eth2":
-    ip: 10.0.1.1/29
-    description: "IntercoRight"
+    description: "Interco_with_other_routers"
 
 loopback:
   "dum1":
