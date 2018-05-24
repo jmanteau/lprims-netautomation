@@ -8,15 +8,5 @@
       - bgp router-id {{ interfaces['Loopback1'].ip | ipaddr('address') }}
       - neighbor {{ item.peer_ip }} remote-as {{ item.peer_as }}
       - redistribute connected
-  when: inventory_hostname in groups['cisco']
   with_items: "{{ bgp.neighbors }}" 
 
-
-- name: "[VYOS] Configure BGP neighbor"
-  vyos_config:
-    lines:
-      - set protocols bgp {{ bgp.bgp_as }} neighbor {{ item.peer_ip }} remote-as '{{ item.peer_as }}'
-      - set protocols bgp {{ bgp.bgp_as }} parameters router-id '{{ loopback['dum1'].ip | ipaddr('address') }}'
-      - set protocols bgp {{ bgp.bgp_as }} redistribute connected
-  when: inventory_hostname in groups['vyos']
-  with_items: "{{ bgp.neighbors }}"
