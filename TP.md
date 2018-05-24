@@ -24,7 +24,7 @@ To have a quick overview read [this article](https://leucos.github.io/ansible-fi
 
 
 
-For these exercices, the simple structure already given along with the documentations linked below is enough to start.
+For these exercises, the simple structure already given along with the documentations linked below is enough to start.
 
 
 
@@ -38,23 +38,23 @@ Use the ansible.sh script or read its content to have the command to launch Ansi
 
 The goal is to modify the playbook to configure the IOS routers.
 
-The data model (host_vars) is setup correctly. 
+The data model (host_vars) is setup correctly.
 
-Read the differents roles to understand what they do. Read the playbook to understand how the roles are called.
+Read the different roles to understand what they do. Read the playbook to understand how the roles are called.
 
 Inside the roles interfaces is an example with basic from 1 to 5 to show how can we have one task do the same but with different level of modularity and reuse (main.yml is the good one)
 
 #### TP2
 
-The exercise is the same as exercice but with the topology 2. The goal is to modify the playbook to configure the VYOS routers.
+The exercise is the same as exercise but with the topology 2. The goal is to modify the playbook to configure the VYOS routers.
 
 Read the roles to see how they have been modified for Vyos. See how the data model is structured compared to TP1.
 
 #### TP3
 
-The goal of this part is to fullfill the roles and data model to configure the topology shown on the diagram.
+The goal of this part is to fulfill the roles and data model to configure the topology shown on the diagram.
 
-**The objective is to give the proctor the zip containing the ansible-tp3 working as asked. This course scoring will be based on the succesful run of this playbook and on the comments done inline the code to explain the roles / playbook / vars put in place**
+**The objective is to give the proctor the zip containing the ansible-tp3 working as asked. This course scoring will be based on the successful run of this playbook and on the comments done inline the code to explain the roles / playbook / vars put in place**
 
 
 
@@ -64,7 +64,7 @@ The goal of this part is to fullfill the roles and data model to configure the t
 
 #### GNS3
 
-Direct Download for VM/Client: [Github Release page](https://github.com/GNS3/gns3-gui/releases) Download the client corresponding to your OS and the recommanded VM (VMWare). Use VirtualBox if you must.
+Direct Download for VM/Client: [Github Release page](https://github.com/GNS3/gns3-gui/releases) Download the client corresponding to your OS and the recommended VM (VMWare). Use VirtualBox if you must.
 
 Documentation for VM/Client installation: [GNS3 VM](https://docs.gns3.com/1wdfvS-OlFfOf7HWZoSXMbG58C4pMSy7vKJFiKKVResc/index.html)
 
@@ -95,7 +95,7 @@ Download the projects at the following URLs:
 
 Either clone the repo (```git clone https://github.com/jmanteau/lprims-netautomation.git```) or [download    an zip of it](https://github.com/jmanteau/lprims-netautomation/archive/master.zip)
 
-Then go to ansible-tpX folder corresponding to the current TP you are doing. 
+Then go to ansible-tpX folder corresponding to the current TP you are doing.
 
 ### Information
 
@@ -155,14 +155,14 @@ Open the project lprims-netautomation-images.gns3project, it will import the ima
 
 When the TP requires it, for each topology lprims-netautomation-tpX.gns3project:
 
-* open it 
+* open it
 * Add a management cloud by drag and dropping on the topology ( GNS3 does not support cloud object in the portable projects)
 
 ![](/Users/jmanteau/PycharmProjects/lprims-netautomation/gns3_cloudmgt.png)
 
-* Connect it from the mgt switch to your bridged VM interface (normally eth0). An easy way to check that, is to console the mgt switch and use the ```mac``` command. If this is properly connected you should learn others MAC adresses from your local network.
+* Connect it from the management switch to your bridged VM interface (normally eth0). An easy way to check that, is to console the management switch and use the ```mac``` command. If this is properly connected you should learn others MAC addresses from your local network.
 
-* Launch the devices. If you have an error on the launch for IOS routers, do the folllowing on GNS3 VM shell: 
+* Launch the devices. If you have an error on the launch for IOS routers, do the following on GNS3 VM shell:
 
   ```
   sudo su
@@ -220,4 +220,3 @@ When the TP requires it, for each topology lprims-netautomation-tpX.gns3project:
 [some BGP commands on IOS](http://networkqna.com/useful-bgp-commands-on-cisco-routers/)
 
 [Cisco commands 1](https://boubakr92.wordpress.com/2013/09/16/ccna-cheat-sheet-part-1/)
-
