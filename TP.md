@@ -158,7 +158,7 @@ When the TP requires it, for each topology lprims-netautomation-tpX.gns3project:
 * open it
 * Add a management cloud by drag and dropping on the topology ( GNS3 does not support cloud object in the portable projects)
 
-![](/Users/jmanteau/PycharmProjects/lprims-netautomation/gns3_cloudmgt.png)
+![](https://github.com/jmanteau/lprims-netautomation/raw/master/gns3_cloudmgt.png)
 
 * Connect it from the management switch to your bridged VM interface (normally eth0). An easy way to check that, is to console the management switch and use the ```mac``` command. If this is properly connected you should learn others MAC addresses from your local network.
 
