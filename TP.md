@@ -162,12 +162,15 @@ When the TP requires it, for each topology lprims-netautomation-tpX.gns3project:
 
 * Connect it from the management switch to your bridged VM interface (normally eth0). An easy way to check that, is to console the management switch and use the ```mac``` command. If this is properly connected you should learn others MAC addresses from your local network.
 
-* Launch the devices. If you have an error on the launch for IOS routers, do the following on GNS3 VM shell:
+* Launch the devices. 
+
+** If you have an error of permissions on the launch for IOS routers, do the following on GNS3 VM shell:
 
   ```
   sudo su
   chmod +x /opt/gns3/images/IOU/*
   ```
+** If you have an error of licence follow the instruction of this link [](https://awal.pro/generate-cisco-iourc-license-on-gns3-vm-using-python-3/)
 
 * Connect by console to them
 
