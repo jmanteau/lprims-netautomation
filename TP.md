@@ -164,13 +164,13 @@ When the TP requires it, for each topology lprims-netautomation-tpX.gns3project:
 
 * Launch the devices. 
 
-** If you have an error of permissions on the launch for IOS routers, do the following on GNS3 VM shell:
+If you have an error of permissions on the launch for IOS routers, do the following on GNS3 VM shell:
 
   ```
   sudo su
   chmod +x /opt/gns3/images/IOU/*
   ```
-** If you have an error of licence follow the instruction of this link [](https://awal.pro/generate-cisco-iourc-license-on-gns3-vm-using-python-3/)
+If you have an error of licence follow the instruction of this [link](https://awal.pro/generate-cisco-iourc-license-on-gns3-vm-using-python-3/)
 
 * Connect by console to them
 
