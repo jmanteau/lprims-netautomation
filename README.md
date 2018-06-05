@@ -5,7 +5,7 @@
 
 Fournir une explication du rôle d'Ansible, de la composition d'un playbook et de son utilisation dans le cadre de l'automatisation réseau.
 
-Détailler le fonctionnement des deux playbooks.
+Détailler le fonctionnement des deux playbooks utilisés dans le TP.
 
 
 ### [Lien vers le TP](https://github.com/jmanteau/lprims-netautomation/blob/master/TP.md)
