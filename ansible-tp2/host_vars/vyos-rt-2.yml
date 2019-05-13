@@ -17,6 +17,6 @@ loopback:
     ip: 100.64.1.2/32
     description: "BGP_Loopback"
   "dum2":
-    ip: 2.2.2.2/32
+    ip: 4.4.4.4/32
     description: "BGP_Loopback"
 

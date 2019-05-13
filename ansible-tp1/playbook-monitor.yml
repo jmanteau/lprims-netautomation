@@ -1,5 +1,5 @@
 ---
 - hosts: cisco
   roles:
-   - role: 'ping'
+   - role: ping
 

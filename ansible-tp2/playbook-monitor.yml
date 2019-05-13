@@ -1,5 +1,5 @@
 ---
 - hosts: routers
   roles:
-   - role: 'ping'
+   - role: ping
 

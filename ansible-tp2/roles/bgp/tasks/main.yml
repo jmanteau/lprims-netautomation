@@ -6,6 +6,6 @@
     lines:
       - set protocols bgp {{ bgp.bgp_as }} neighbor {{ item.peer_ip }} remote-as '{{ item.peer_as }}'
       - set protocols bgp {{ bgp.bgp_as }} parameters router-id '{{ loopback['dum1'].ip | ipaddr('address') }}'
-      - set protocols bgp {{ bgp.bgp_as }} redistribute connected
+      - set protocols bgp {{ bgp.bgp_as }} address-family ipv4-unicast redistribute connected
   when: inventory_hostname in groups['vyos']
   with_items: "{{ bgp.neighbors }}"

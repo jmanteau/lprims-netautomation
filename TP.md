@@ -1,11 +1,8 @@
-
-
 # Intro to Network Automation with Ansible Exercices
 
 ## Instructions
 
 ![Instructions](https://github.com/jmanteau/lprims-netautomation/raw/master/TP%20IUT%20Network%20Automation.png)
-
 
 #### Goals:
 
@@ -13,38 +10,35 @@
 - TP 2: Manage Vyos configuration with Ansible
 - TP 3: Manage Cisco / Vyos configuration in more complex data model with Ansible
 
-
-
-
-To gain full understanding of Ansible, I recommend doing [Training Course for Ansible Network Automation](https://github.com/network-automation/linklight)
-
-(git clone and open the html in deck folder).
+To gain full understanding of Ansible, I recommend doing [Training Course for Ansible Network Automation](https://github.com/network-automation/linklight) (git clone and open the html in deck folder).
 
 To have a quick overview read [this article](https://leucos.github.io/ansible-files-layout).
 
-
-
 For these exercises, the simple structure already given along with the documentations linked below is enough to start.
 
-
-
-*Go to the Setup section first to prepare the tooling before starting the exercices*
-
+**Go to the Setup section first to prepare the tooling before starting the exercices**
 
 
 #### TP1
 
-Use the ansible.sh script or read its content to have the command to launch Ansible.
+- Open the gns3project located in the ansible-tp1 folder.
 
-The goal is to modify the playbook to configure the IOS routers.
+- Obtain the adminstration IP for the two routers
 
-The data model (host_vars) is setup correctly.
+- Complete the file inventory.txt with the extracted values
 
-Read the different roles to understand what they do. Read the playbook to understand how the roles are called.
+- Launch the ansible-monitor.sh file. What is happening ? What is the goal of this execution (read the file roles/ping/tasks/main.yml) ?
 
-Inside the roles interfaces is an example with basic from 1 to 5 to show how can we have one task do the same but with different level of modularity and reuse (main.yml is the good one)
+- Use the ansible.sh script or read its content to have the command to launch Ansible. What is happening ? Read the playbook-apply.yml and explain the sequence of actions occuring (explain the differents roles action)
+
+PS: Inside the roles interfaces is an example with basic from 1 to 5 to show how can we have one task do the same but with different level of modularity and reuse (main.yml is the good one and used by the role)
 
 #### TP2
+
+- Open the gns3project located in the ansible-tp2 folder
+
+- Bootstrap the devices with the configuration below. Modify the inventory.txt with the IPs shown at the end.
+
 
 The exercise is the same as exercise but with the topology 2. The goal is to modify the playbook to configure the VYOS routers.
 
@@ -52,52 +46,69 @@ Read the roles to see how they have been modified for Vyos. See how the data mod
 
 #### TP3
 
+Open the gns3project located in the ansible-tp3 folder
+
 The goal of this part is to fulfill the roles and data model to configure the topology shown on the diagram.
 
 **The objective is to give the proctor the zip containing the ansible-tp3 working as asked. This course scoring will be based on the successful run of this playbook and on the comments done inline the code to explain the roles / playbook / vars put in place**
 
-
-
 ## Setup
 
+### GNS3
 
+Direct Download for VM/Client: [Github Release page](https://github.com/GNS3/gns3-gui/releases) Download a client version >= 2.2 corresponding to your OS and the recommended VM (VMWare). Use VirtualBox if you must.
 
-#### GNS3
+**[Link for 2019 class](https://github.com/GNS3/gns3-gui/releases/tag/v2.2.0a5)**
 
-Direct Download for VM/Client: [Github Release page](https://github.com/GNS3/gns3-gui/releases) Download the client corresponding to your OS and the recommended VM (VMWare). Use VirtualBox if you must.
+Follow up the installation documentation for VM/Client installation [GNS3 VM](https://docs.gns3.com/1wdfvS-OlFfOf7HWZoSXMbG58C4pMSy7vKJFiKKVResc/index.html) until the "New Appliance Template" step. Skip this one.
 
-Documentation for VM/Client installation: [GNS3 VM](https://docs.gns3.com/1wdfvS-OlFfOf7HWZoSXMbG58C4pMSy7vKJFiKKVResc/index.html)
+Import this portable [Images Project](https://s3-eu-west-1.amazonaws.com/jmanteau/lprims-netautomation-images.gns3project) from the main menu to have the images ready to use for the labs.
+
+Try to launch both routers (right click on them-> Start). You connect on the console (right click -> Console) to connect to them.
+
+- If you have an error regarding "IOU is not executable" please log on the GNS3 VM Shell (option 3) and type
+  ```
+  sudo su
+  loadkey fr
+  chmod +x /opt/gns3/images/IOU/*.bin
+  ```
+- If you have an error regarding KVM, please ensure that hypervisor capabilites are actived on your VMWare sofware in your VM options (VT-x)
+- If you have an error regarding License error for IOU. Connect by SSH to the VM (with the information shown) and select Shell (option 3)
+  ```
+  wget https://s3.eu-west-3.amazonaws.com/lprims-netautomation/py3-cisco-iou.py
+  python3 py3-cisco-iou.py
+  ```
 
 General documentation: [GNS3 Client](https://docs.gns3.com/)
 
 @TODO Document VMware import and bridge client (screenshots)
 
-#### Ansible
+### Ansible
 
-Linux/Mac: [Ansible](http://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installation-guide) Due to a bug in one vyos module on the last Vyos 1.2, use Ansible devel (```pip install git+https://github.com/ansible/ansible.git@devel```)
+#### Docker Desktop
 
-Windows: Launch a Linux VM, install Ansible with the previous links.  Share with the VM the folder of the exercices.
+Install Docker Desktop. You will need to run Ansible without having to install it locally.
 
-
-
-#### GNS3 Portable projects
-
-Download the projects at the following URLs:
-
-- [Images](https://s3-eu-west-1.amazonaws.com/jmanteau/lprims-netautomation-images.gns3project)
-- [TP1](https://s3-eu-west-1.amazonaws.com/jmanteau/lprims-netautomation-tp1.gns3project)
-- [TP2](https://s3-eu-west-1.amazonaws.com/jmanteau/lprims-netautomation-tp2.gns3project)
-- [TP3](https://s3-eu-west-1.amazonaws.com/jmanteau/lprims-netautomation-tp3.gns3project)
-
-
+[Windows](https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe)
+[Mac](https://download.docker.com/mac/stable/Docker.dmg)
 
 #### Ansible TP files
 
-Either clone the repo (```git clone https://github.com/jmanteau/lprims-netautomation.git```) or [download    an zip of it](https://github.com/jmanteau/lprims-netautomation/archive/master.zip)
+Either clone the repo (`git clone https://github.com/jmanteau/lprims-netautomation.git`) or [download an zip of it](https://github.com/jmanteau/lprims-netautomation/archive/master.zip)
 
 Then go to ansible-tpX folder corresponding to the current TP you are doing.
 
-### Information
+#### Build Ansible Docker image for the TP
+
+Go to ansible-docker folder. Execute the build.sh to build the docker image that will be used to execute Ansible.
+
+#### Usage of Docker with Ansible
+
+The ansible.sh inside each TP folder will pack the launching of Ansible with Docker in an easy way.
+
+**The setup is now finished, you can now start the TP**
+
+## TP Technical Information
 
 |                            | Cisco IOS        | Vyos                            |
 | -------------------------- | ---------------- | ------------------------------- |
@@ -146,36 +157,6 @@ show ip int brief
 wr
 
 ```
-
-
-
-### Running and connecting to the routers
-
-Open the project lprims-netautomation-images.gns3project, it will import the images for the VYOS and IOS routers used by the others projects.
-
-When the TP requires it, for each topology lprims-netautomation-tpX.gns3project:
-
-* open it
-* Add a management cloud by drag and dropping on the topology ( GNS3 does not support cloud object in the portable projects)
-
-![](/Users/jmanteau/PycharmProjects/lprims-netautomation/gns3_cloudmgt.png)
-
-* Connect it from the management switch to your bridged VM interface (normally eth0). An easy way to check that, is to console the management switch and use the ```mac``` command. If this is properly connected you should learn others MAC addresses from your local network.
-
-* Launch the devices. If you have an error on the launch for IOS routers, do the following on GNS3 VM shell:
-
-  ```
-  sudo su
-  chmod +x /opt/gns3/images/IOU/*
-  ```
-
-* Connect by console to them
-
-* Get the DHCP assigned IPs
-
-* Fulfill the inventory with those IPs (use the commands at the end of the bootstrap to get them)
-
-
 
 ## Documentation
 
