@@ -73,7 +73,7 @@ The goal of this part is to fulfill the roles and data model to configure the to
 
 - Try to launch both routers (right click on them-> Start). You connect on the console with (right click -> Console) to connect to them.
 
-  - If you have an error regarding "IOU is not executable" please log on the GNS3 VM Shell (option 3) and type
+  - If you have an error regarding "IOU is not executable" please log on the GNS3 VM Shell (option 3) and type:
     ```
     sudo su
     loadkey fr
@@ -167,10 +167,11 @@ wr
 
 ```
 
-# Documentation
 
-## Modules List
 
+## Documentation
+
+### Modules List
 [IOS Module listing](http://docs.ansible.com/ansible/latest/modules/list_of_network_modules.html#ios)
 
 [Vyos Module listing](http://docs.ansible.com/ansible/latest/modules/list_of_network_modules.html#vyos)
