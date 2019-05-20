@@ -12,7 +12,7 @@
 
 To gain full understanding of Ansible, I recommend doing [Training Course for Ansible Network Automation](https://github.com/network-automation/linklight) (git clone and open the html in deck folder).
 
-To have a quick overview read [this article](https://leucos.github.io/ansible-files-layout).
+To have a quick overview read [this article](https://leucos.github.io/ansible-files-layout) and [those slides](https://ansible.github.io/workshops/decks/ansible-essentials.html#/).
 
 For these exercises, the simple structure already given along with the documentations linked below is enough to start.
 
@@ -79,13 +79,10 @@ The goal of this part is to fulfill the roles and data model to configure the to
     loadkey fr
     chmod +x /opt/gns3/images/IOU/*.bin
     ```
+
   - If you have an error regarding KVM, please ensure that hypervisor capabilites are actived on your VMWare sofware in your VM options (VT-x)
-  - If you have an error regarding License error for IOU. Connect by SSH to the VM (with the information shown) and select Shell (option 3)
-    ```
-    wget https://s3.eu-west-3.amazonaws.com/lprims-netautomation/py3-cisco-iou.py
-    python3 py3-cisco-iou.py
-    ```
-    Copy the generated license under GNS3 Gui Client "IOS on Unix" 
+
+  - If you have an error regarding License error for IOU, open this [link](https://s3.eu-west-3.amazonaws.com/lprims-netautomation/iou.txt) and copy the license under GNS3 Gui Client "IOS on Unix" 
 
     ![](imgs/iou.png)
 
@@ -93,26 +90,23 @@ The goal of this part is to fulfill the roles and data model to configure the to
 ## Ansible
 
 Ansible can be installed on an Operating System by following the [install guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
-To simplify this TP setup with dependencies management, we will use a Docker image. It will allow us to run Ansible without having to install it locally.
+To simplify this TP setup with dependencies management, we will use a VM already configured.
 
-### Docker Desktop
+[VM to download](https://s3.eu-west-3.amazonaws.com/lprims-netautomation/AnsibleVM.ova)
 
-Install Docker Desktop.
+User: ansible
 
-[Windows](https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe)
-[Mac](https://download.docker.com/mac/stable/Docker.dmg)
+Password: ansible
+
+Root password idem
 
 ### Ansible TP files
 
 Either clone the repo (`git clone https://github.com/jmanteau/lprims-netautomation.git`) or [download an zip of it](https://github.com/jmanteau/lprims-netautomation/archive/master.zip) and unzip it.
 
-### Build Ansible Docker image for the TP
+### Usage of  Ansible
 
-Go to ansible-docker folder. Execute the build.sh to build the docker image that will be used to execute Ansible.
-
-### Usage of Docker with Ansible
-
-The ansible.sh inside each TP folder will pack the launching of Ansible with Docker in an easy way.
+The ansible.sh inside each TP folder will pack the launching of Ansible with the option needed.
 
 **The setup is now finished, you can now start the TP**
 
