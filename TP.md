@@ -48,7 +48,7 @@ PS: Inside the roles interfaces is an example with basic from 1 to 5 to show how
 
 ## TP3
 
-Open the gns3project located in the ansible-tp3 folder
+Download and open the [gns3project]((https://s3.eu-west-3.amazonaws.com/lprims-netautomation/lprims-netautomation-tp3.gns3project))
 
 The goal of this part is to fulfill the roles and data model to configure the topology shown on the diagram.
 
