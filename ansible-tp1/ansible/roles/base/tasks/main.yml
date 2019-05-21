@@ -1,4 +1,0 @@
----
-- name: Configure hostname IOS 
-  ios_system:
-    hostname: "{{ hostname }}"

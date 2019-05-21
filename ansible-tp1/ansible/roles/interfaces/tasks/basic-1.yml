@@ -1,7 +1,0 @@
-- name: Configure Interface
-  ios_config:
-    parents: "interface Ethernet0/1"
-    lines:
-      - ip address 192.168.0.1 255.255.255.0
-  after:
-    - no shutdown

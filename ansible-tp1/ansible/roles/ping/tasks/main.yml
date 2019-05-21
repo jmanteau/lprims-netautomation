@@ -1,5 +1,0 @@
-- name: Test reachability 
-  ios_ping:
-    dest: "{{ item }}"
-    state: 'present'
-  with_items: ["1.1.1.1","2.2.2.2"]
