@@ -1,5 +1,4 @@
----
 - name: "Test reachability"
   vyos_ping:
     dest: "{{ item }}"
-  with_items: ["3.3.3.3","4.4.4.4"]
+  with_items: ["3.3.3.3", "4.4.4.4"]

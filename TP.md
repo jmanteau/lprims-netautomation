@@ -104,6 +104,10 @@ Root password idem
 
 Either clone the repo (`git clone https://github.com/jmanteau/lprims-netautomation.git`) or [download an zip of it](https://github.com/jmanteau/lprims-netautomation/archive/master.zip) and unzip it.
 
+Mount the unzipped folder under the options of the VM in SharedFolders. You can then access it under /mnt/hgfs.
+
+**COPY the folder to your home to execute it as Ansible does not like to be run in a read write folder open to the world** 
+
 ### Usage of  Ansible
 
 The ansible.sh inside each TP folder will pack the launching of Ansible with the option needed.
