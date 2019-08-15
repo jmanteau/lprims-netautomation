@@ -161,6 +161,7 @@ privilege level 15
 transport input ssh
 login local
 exit
+ip scp server enable
 exit
 show ip int brief
 wr
