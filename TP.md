@@ -147,6 +147,7 @@ show interfaces
 
 ```
 conf t
+aaa new-model
 interface Ethernet0/0
 ip address dhcp
 no shut
@@ -156,6 +157,7 @@ ip domain-name local
 crypto key generate rsa modulus 2048
 ip ssh version 2
 line vty 0 4
+privilege level 15
 transport input ssh
 login local
 exit
