@@ -148,11 +148,11 @@ show interfaces
 ```
 conf t
 aaa new-model
-
 interface Ethernet0/0
 ip address dhcp
 no shut
 username cisco password cisco123
+username admin privilege 15 secret 0 thepassword
 enable password cisco
 ip domain-name local
 crypto key generate rsa modulus 2048
