@@ -148,6 +148,7 @@ show interfaces
 ```
 conf t
 aaa new-model
+
 interface Ethernet0/0
 ip address dhcp
 no shut
